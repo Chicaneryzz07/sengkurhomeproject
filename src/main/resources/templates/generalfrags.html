@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" >
+
+<head th:fragment="headerfiles">
+    <meta charset="UTF-8" />
+
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" th:href="@{/assets/assets/favicon.ico}"/>
+    <link th:href="@{/assets/css/styles.css}" rel="stylesheet"/>
+    <!-- Bootstrap icons-->
+
+    <link th:href="@{/assets/plugin/bootstrap_icon/bootstrap-icons.css}" rel="stylesheet">
+
+
+    <link th:href="@{/assets/css/font.css}" rel="stylesheet">
+</head>
+<body>
+    <div th:fragment="nav">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index" id="brand">Seng Kur Dkhar Sawkpoh</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li  class="nav-item "><a th:classappend="${#httpServletRequest.getRequestURI() == '/index' ? 'active':''}" class="nav-link " th:href="@{/index}">Home</a></li>
+
+                        <li  class="nav-item"><a th:classappend="${#httpServletRequest.getRequestURI() == '/about' ? 'active':''}" class="nav-link" th:href="@{/about}">About</a></li>
+                        <!--                    <li class="nav-item "><a class="nav-link active" href="activities">Activities</a></li>-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " id="navbarDropdownActivities" href="#" role="button"
+
+                               th:classappend="${activesetting == 'active_ach' ? 'active':''}"
+
+                               data-bs-toggle="dropdown" aria-expanded="false">Achievements</a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/academics' ? 'active':''}" class="dropdown-item" th:href="@{/academics}">Academics</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/entrepreneurship' ? 'active':''}" class="dropdown-item" th:href="@{/entrepreneurship}">Entrepreneurship</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/awards' ? 'active':''}" class="dropdown-item" th:href="@{/awards}">Awards</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/felicitations' ? 'active':''}" class="dropdown-item" th:href="@{/felicitations}">Felicitations</a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <!--                    <li class="nav-item"><a class="nav-link" href="reports">Reports</a></li>-->
+                        <!-- <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " id="navbarDropdownBlog" href="#" role="button"
+                               th:classappend="${activesetting == 'active_rep' ? 'active':''}"
+                               data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/reports' ? 'active':''}" class="dropdown-item" th:href="@{/reports}">Reports</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/endowment' ? 'active':''}" class="dropdown-item" th:href="@{/endowment}">Resources</a></li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                                <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li sec:authorize="isAnonymous()" class="nav-item dropdown">
+                            <a  class="nav-link dropdown-toggle" id="registerdropdown" href="#" role="button"
+                                th:classappend="${activesetting == 'active_reg' ? 'active':''}"
+                               data-bs-toggle="dropdown" aria-expanded="false">Register</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="registerdropdown">
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/register' ? 'active':''}" class="dropdown-item" th:href="@{/register}">Register</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/login' ? 'active':''}" class="dropdown-item" th:href="@{/login}">Login</a></li>
+                            </ul>
+                            <!--                            <a sec:authorize="isAnonymous()" class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="/login">Login</a>-->
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!--                        <a class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="form1">Register</a>-->
+
+                            <!--                            <p sec:authorize="isAuthenticated()" style="color:white;">Welcome, <span th:text ="${#authentication.getPrincipal().getDisplayName()}"></span>-->
+                            <!--                            </p>-->
+                            <a sec:authorize="isAuthenticated()" class="btn btn-primary btn-sm px-2 me-sm-3 m-1" th:href="@{/logout}">Logout</a>
+
+
+                            <!--                        <a class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="login">Login</a>-->
+                            <!--                            <div sec:authorize="isAuthenticated()">Text visible only to authenticated users.</div>-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <footer class="bg-dark py-4 mt-auto" th:fragment="footer">
+
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; Your Website 2022</div>
+                </div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" th:src="@{/assets/plugin/jquery/jquery-3.6.0.min.js}"></script>
+        <script type="text/javascript" th:src="@{/assets/plugin/vscroll/jquery.autoscroll.js}"></script>
+        <script type="text/javascript" th:src="@{/assets/plugin/bootstrap_js/bootstrap.bundle.min.js}"></script>
+
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="generalfrags.html :: headerfiles">
+</head>
+<title>Seng Kur Dkhar | Form I</title>
+
+<body class="d-flex flex-column">
+<main class="flex-shrink-0">
+    <!-- Navigation-->
+    <div th:insert="generalfrags.html :: nav">
+
+    </div>
+    <!-- Page content-->
+    <section class="py-5">
+        <div class="container px-5">
+            <!-- Contact form-->
+            <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                <div class="text-center mb-5">
+                    <!--                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">-->
+                    <!--                        <i class="bi bi-envelope"></i>-->
+                    <h1>Phom I</h1>
+                    <!--                    </div>-->
+                    <h3 class="fw-bolder">KA PHOM BAN LUM KHANASAMARI : UNIT</h3>
+                    <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-12 col-xl-12">
+
+                        <form novalidate>
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected value="-1">Unit</option>
+                                            <option value="1">Golflink</option>
+                                            <option value="2">Jaiaw</option>
+                                            <option value="3">Laban</option>
+                                            <option value="4">Laitumkhrah-Nongthymmai</option>
+                                            <option value="5">Mawkhar</option>
+                                            <option value="6">Mawlai</option>
+                                            <option value="7">Mawryngkneng</option>
+
+                                            <option value="9">Ribhoi</option>
+                                            <option value="10">Sohra</option>
+                                        </select>
+
+                                        <!--                                        <input type="text" id="form3Example1" class="form-control" />-->
+                                        <!--                                        <label class="form-label" for="dropdownMenuButton1"> </label>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="fullname" class="form-control"/>
+                                        <label class="form-label" for="fullname"> Kyrteng Pura</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="Kpoh" class="form-control"/>
+                                        <label class="form-label" for="Kpoh"> Kpoh </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected value="-1">Kynthei/Shynrang</option>
+                                            <option value="1">Kynthei</option>
+                                            <option value="2">Shynrang</option>
+                                        </select>
+
+                                        <!--                                        <input type="text" id="form3Example1" class="form-control" />-->
+                                        <!--                                        <label class="form-label" for="dropdownMenuButton1"> </label>-->
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="age" class="form-control"/>
+                                        <label class="form-label" for="age"> Rta </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+
+                                        <input type="text" id="mname" class="form-control"/>
+                                        <label class="form-label" for="mname"> Kyrteng Kmie </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="mkpoh" class="form-control"/>
+                                        <label class="form-label" for="mkpoh"> Kpoh </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+
+                                        <input type="text" id="fname" class="form-control"/>
+                                        <label class="form-label" for="fname"> Kyrteng Kpa </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+
+                                        <input type="text" id="lname" class="form-control"/>
+                                        <label class="form-label" for="lname"> Kyrteng I Lok </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <label for="my-container" class="form-label">Jaka shong (address)</label>
+                                        <div class="container my-container" id="my-container">
+                                            <div class="mb-3">
+                                                <label for="permanentaddress" class="form-label">Permanent</label>
+                                                <textarea class="form-control" id="permanentaddress"
+                                                          rows="3"></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="tempaddress" class="form-label">Temporary</label>
+                                                <textarea class="form-control" id="tempaddress" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row mb-4">
+
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1">Iing shong</option>
+                                            <option value="1">Lajong</option>
+                                            <option value="2">Shongwai</option>
+                                        </select>
+
+                                        <!--                                        <input type="text" id="form3Example1" class="form-control" />-->
+                                        <!--                                        <label class="form-label" for="dropdownMenuButton1"> </label>-->
+                                    </div>
+
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1">RCC</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1">Semi-pucca building</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1">Quarter</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- contact input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="tel" id="contact" class="form-control"/>
+                                            <label class="form-label" for="contact">Contact Mobile No.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="Email" class="form-control"/>
+                                            <label class="form-label" for="Email">Email address</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <label for="my-container" class="form-label"> Jingtrei (Occupation)</label>
+                            <div class="row mb-4 my-container py-3 m-1" >
+                                <!--                                <div class="my-container ">-->
+
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1"> Dang trei</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+
+                                    </div>
+
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1">Lah shong thait</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1"> Kam Sorkar</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="work" class="form-control"
+                                                   placeholder="(Deptt/Office) (District)"/>
+                                            <label class="form-label" for="work"> (Deptt/Office) (District)</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="designation" class="form-control"
+                                                   placeholder="  Designation bad Jaka Trei"/>
+                                            <label class="form-label" for="designation"> Designation bad Jaka Trei</label>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row mb-0">
+                                    <label  class="form-label"> Kam Lajong</label>
+                                    <div class="col">
+
+                                        <div class="form-outline">
+
+                                            <div class="form-outline mb-4">
+                                                <input type="email" id="kam" class="form-control"
+                                                       placeholder="    (jait kam)"/>
+<!--                                                <label class="form-label" for="kam">   (jait kam)</label>-->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col">
+
+                                        <div class="form-outline">
+
+                                            <div class="form-outline mb-4">
+                                                <input type="email" id="jaka" class="form-control"
+                                                       placeholder="   Jaka trei"/>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row mb-0">
+                                    <label  class="form-label"> Kiwei pat</label>
+                                    <div class="col">
+
+                                        <div class="form-outline">
+
+                                            <div class="form-outline mb-4">
+                                                <input type="email" id="kiweikam" class="form-control"
+                                                       placeholder="    (jait kam)"/>
+                                                <!--                                                <label class="form-label" for="kam">   (jait kam)</label>-->
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col">
+
+                                        <div class="form-outline">
+
+                                            <div class="form-outline mb-4">
+                                                <input type="email" id="kiweijaka" class="form-control"
+                                                       placeholder="   Jaka trei"/>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+                                        <select class="form-select" aria-label="Default select ">
+                                            <option selected value="-1">Jingioh/kamai shibnai shibnai</option>
+                                            <option value="1"> Hapoh 10,000/- </option>
+                                            <option value="2"> 10001 - 20000/- </option>
+                                            <option value="3"> 20001 - 30000/- </option>
+                                            <option value="4"> 30001 -40000/- </option>
+                                            <option value="5"> 40001/-  shaneng </option>
+
+                                        </select>
+
+                                        <!--                                        <input type="text" id="form3Example1" class="form-control" />-->
+                                        <!--                                        <label class="form-label" for="dropdownMenuButton1"> </label>-->
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="row my-container mb-4 m-1 p-2">
+                                <label  class="form-label">  Kyrteng ki Khun  (tang ki bym pat mih iing) lada 1 haneng dei i kynthei</label>
+                                <div class="col">
+
+                                    <div class="form-outline">
+
+
+                                        <div class="table-responsive">
+                                            <table id="myTable" class="table order-list table-bordered table-sm">
+                                                <thead>
+                                                <tr>
+                                                    <td>Kyrteng pura</td>
+                                                    <td>Shynrang /Kynthei</td>
+                                                    <td>Jingpule/Jingtrei/Jingtbit/Phone No</td>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td class="col-sm-4">
+                                                        <input type="text" name="name" class="form-control" />
+                                                    </td>
+                                                    <td class="col-sm-4">
+                                                        <select class="form-select" aria-label="Default select ">
+                                                            <option selected value="-1"> Shynrang /Kynthei</option>
+                                                            <option value="1">Shynrang</option>
+                                                            <option value="2">Kynthei</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="col-sm-3">
+                                                        <input type="text" name="phone"  class="form-control"/>
+                                                    </td>
+                                                    <td class="col-sm-2"><a class="deleteRow"></a>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <td colspan="4"  style="text-align: right;">
+                                                        <input type="button " class="btn  btn-secondary " id="addrow" value="Add Row" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <!-- Submit button -->
+                            <div style="text-align: center">
+                                <a class="text-white" href="form2"><button type="button" class="btn btn-primary btn-block mb-4 ">Next</button></a>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+<!-- Footer--><footer  th:replace="generalfrags.html :: footer">
+
+</footer>
+
+<!-- Core theme JS-->
+<!--<script src="assets/js/scripts.js"></script>-->
+<script>
+
+    $(document).ready(function () {
+    var counter = 0;
+
+    $("#addrow").on("click", function () {
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += '<td><input type="text" class="form-control" name="name' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control" name="mail' + counter + '"/></td>';
+        cols += '<td><input type="text" class="form-control" name="phone' + counter + '"/></td>';
+
+        cols += '<td><input type="button" class="ibtnDel btn btn-md btn-danger "  value="Delete"></td>';
+        newRow.append(cols);
+        $("table.order-list").append(newRow);
+        counter++;
+    });
+
+
+
+    $("table.order-list").on("click", ".ibtnDel", function (event) {
+        $(this).closest("tr").remove();
+        counter -= 1
+    });
+
+
+});
+
+
+
+function calculateRow(row) {
+    var price = +row.find('input[name^="price"]').val();
+
+}
+
+function calculateGrandTotal() {
+    var grandTotal = 0;
+    $("table.order-list").find('input[name^="price"]').each(function () {
+        grandTotal += +$(this).val();
+    });
+    $("#grandtotal").text(grandTotal.toFixed(2));
+}
+</script>
+</body>
+
+</html>

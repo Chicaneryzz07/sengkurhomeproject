@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:insert="generalfrags.html :: headerfiles">
+</head>
+<title>Seng Kur Dkhar | Form II</title>
+
+<body class="d-flex flex-column">
+<main class="flex-shrink-0">
+    <!-- Navigation-->
+    <div th:insert="generalfrags.html :: nav">
+
+    </div>
+    <!-- Page content-->
+    <section class="py-5">
+        <div class="container px-5">
+            <!-- Contact form-->
+            <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+                <div class="text-center mb-5">
+                    <!--                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">-->
+                    <!--                        <i class="bi bi-envelope"></i>-->
+                    <h1>Phom I-A</h1>
+                    <!--                    </div>-->
+                    <h3 class="fw-bolder">KA PHOM BAN LUM KHANASAMARI : UNIT</h3>
+                    <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-12 col-xl-12">
+
+                        <form novalidate>
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="fullname" class="form-control"/>
+                                        <label class="form-label" for="fullname"> Kyrteng Kmie (kumba ai ha ka Phom
+                                            I)</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="Kpoh" class="form-control"/>
+                                        <label class="form-label" for="Kpoh"> Kpoh </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="fullnamechild" class="form-control"/>
+                                        <label class="form-label" for="fullnamechild"> Kyrteng pura i Khun (Kumba ai ha
+                                            ka Phom I)</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="Kpohkhun" class="form-control"/>
+                                        <label class="form-label" for="Kpohkhun"> Shynrang </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="Kynthei" class="form-control"/>
+                                        <label class="form-label" for="Kynthei"> Kynthei </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="khunRta" class="form-control"/>
+                                        <label class="form-label" for="khunRta"> Rta </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- contact input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="tel" id="contact" class="form-control"/>
+                                            <label class="form-label" for="contact">Contact Mobile No.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- Email input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="Email" class="form-control"/>
+                                            <label class="form-label" for="Email">Email address</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- contact input -->
+                                        <div class="form-outline mb-4">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col" colspan="2"> Jingpule/Jingpass</th>
+                                                    <th scope="col">Lah pass</th>
+                                                    <th scope="col">Dang pule</th>
+                                                    <th scope="col">(BA/BE/MBA, etc)</th>
+                                                    <th scope="col">College bad jaka</th>
+                                                    <th scope="col">Snem ba pass / dang pule</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <th scope="row">a</th>
+                                                    <td>Academic qualification</td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">b</th>
+                                                    <td>Technical/Profesion qualification</td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">k</th>
+                                                    <td>Diploma/Certificate qualification</td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- contact input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="tel" id="sap" class="form-control"/>
+                                            <label class="form-label" for="contact"> Ki sap ki phong</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- contact input -->
+                                        <div class="form-outline mb-4">
+                                            <input type="tel" id="curricular" class="form-control"/>
+                                            <label class="form-label" for="contact"> Extra curricular activities</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- contact input -->
+                                        <div class="form-outline mb-4">
+                                            <table class="table table-bordered caption-top text-center">
+                                                <caption> Kam ba trei (tang ia kiba lah trei kam)</caption>
+
+
+                                                <tbody>
+                                                <tr>
+
+                                                    <th scope="col">a</th>
+                                                    <th scope="col">Kam Sorkar</th>
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="Kyrteng ka Service"/></td>
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="Snem ba join "/></td>
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="Kyrteng ka Department"/></td>
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="Kyrteng ka Office"/></td>
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="Designation"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" rowspan="2">b</th>
+                                                    <th scope="col" rowspan="2">Kam lajong</th>
+                                                    <td colspan="3"><input type="text" class="form-control"
+                                                                           placeholder="Ka/ki Kam ba seng hi (Jer ia ki jait kam)"/>
+                                                    </td>
+
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="  Snem ba seng"/></td>
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="Jaka trei kam"/></td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td colspan="3"><input type="text" class="form-control"
+                                                                           placeholder="Kam ba trei bad kiwei (Jer ia ki jait kam)"/>
+                                                    </td>
+
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="    Snem ba sdang trei"/></td>
+                                                    <td><input type="text" class="form-control"
+                                                               placeholder="Jaka trei kam"/></td>
+                                                </tr>
+
+                                                <tr>
+
+                                                    <th scope="col">k</th>
+                                                    <th scope="col" colspan="3">Kiwei kiwei ki kam ba trei mon
+                                                        sngewbha
+                                                    </th>
+
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                    <td><input type="text" class="form-control" placeholder=""/></td>
+                                                </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row mb-4">
+                                <div class="col">
+
+                                    <div class="form-outline">
+                                        <!-- contact input -->
+                                        <div class="form-outline mb-4">
+                                            <table class="table table-bordered caption-top text-center">
+                                                <caption>Ia ki bym pat ioh ne trei kam tangba kiba la dep pyndep ia ki
+                                                    jingpule ba la kdew ha 4 haneng
+                                                </caption>
+                                                <tbody>
+                                                <tr>
+
+                                                    <th scope="col">a</th>
+                                                    <th scope="col">Ki skillset ne ki jingtbit ba don</th>
+                                                    <td colspan="3">
+                                                     <textarea class="form-control" id="skillset"
+                                                               rows="3"></textarea>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+
+                                                    <th scope="col">b</th>
+                                                    <th scope="col">Experience</th>
+                                                    <td colspan="3">
+                                                        <textarea class="form-control" id="experience"
+                                                                  rows="3"></textarea>
+                                                    </td>
+
+                                                </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- Submit button -->
+                            <div style="text-align: right">
+                                <button type="button" class="btn btn-primary btn-block mb-4 " id="save">
+                                    Submit
+                                </button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+<!-- Footer--><footer  th:replace="generalfrags.html :: footer">
+
+</footer>
+
+<script>
+     $(document).ready(function () {
+
+        $("#save").click(function(){
+            var result = confirm("Do You Want to save the form?");
+                if (result) {
+                    alert('Data is Saved Successfully')
+                    location.href='index'
+                }else{
+                alert('Data is Not Saved')
+                }
+           });
+
+     });
+
+
+</script>
+
+</body>
+
+</html>

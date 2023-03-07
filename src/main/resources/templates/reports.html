@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:insert="generalfrags.html :: headerfiles">
+
+
+    <!-- Favicon-->
+
+
+</head>
+<title>Seng Kur Dkhar | Reports</title>
+<body class="d-flex flex-column">
+<main class="flex-shrink-0">
+    <!-- Navigation-->
+    <div th:insert="generalfrags.html :: nav">
+
+    </div>
+    <!-- Header-->
+    <!--            <header class="py-5">
+                    <div class="container px-5">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-xxl-6">
+                                <div class="text-center my-5">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>-->
+    <!-- About section one-->
+    <section class="py-5 bg-light" id="scroll-target">
+        <div class="container-fluid px-5 my-5">
+            <div class="row gx-5 ">
+                <div class="col-lg-12 table-responsive">
+                    <table id="example" class="table table-striped" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Dated</th>
+                            <th>Download</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Ka Jingpyntip Na Ka Seng Kmie</td>
+                            <td>Ka Jingpyntip Na Ka Seng Kmie</td>
+                            <td>12-10-20</td>
+                            <th><a target="_blank" href="assets/docs/samplepdf.pdf">PDF 1.0MB</a></th>
+                        </tr>
+                        <tr>
+                            <td>Unit Wise Membership</td>
+                            <td>Unit Wise Membership</td>
+                            <td>11-04-20</td>
+                            <th><a target="_blank" href="assets/docs/samplepdf.pdf">PDF 1.0MB</a></th>
+                        </tr>
+                        <tr>
+                            <td>Clan Wise Membership</td>
+                            <td>Clan Wise Membership</td>
+                            <td>12-10-20</td>
+                            <th><a target="_blank" href="assets/docs/samplepdf.pdf">PDF 1.0MB</a></th>
+                        </tr>
+                        <tr>
+                            <td>Occupation/Employment wise report</td>
+                            <td>Occupation/Employment wise report</td>
+                            <td>12-10-20</td>
+                            <th><a target="_blank" href="assets/docs/samplepdf.pdf">PDF 1.0MB</a></th>
+                        </tr>
+                        <tr>
+                            <td>Financial Survey</td>
+                            <td>Financial Survey</td>
+                            <td>12-10-20</td>
+                            <th><a target="_blank" href="assets/docs/samplepdf.pdf">PDF 1.0MB</a></th>
+                        </tr>
+                        <tr>
+                            <td>Ka Rai Jong Ka Dorbar Pyllun</td>
+                            <td>Ka Rai Jong Ka Dorbar Pyllun</td>
+                            <td>12-10-20</td>
+                            <th><a target="_blank" href="assets/docs/samplepdf.pdf">PDF 1.0MB</a></th>
+                        </tr>
+
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Dated</th>
+                            <th>Download</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section two-->
+
+</main>
+<!-- Footer--><footer  th:replace="generalfrags.html :: footer">
+
+</footer>
+
+
+<!--<script type="text/javascript" src="assets/plugin/datatables/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/dTable/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/dTable/dataTables.jqueryui.min.js"></script>
+
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/Buttons-2.2.3/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/JSZip-2.5.0/jszip.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/pdfmake-0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/pdfmake-0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/Buttons-2.2.3/js/buttons.html5.min.js"></script>
+-->
+
+        <script>
+          //  $(document).ready(function () {
+             //   $('#example').DataTable({
+                   // dom: 'Bfrtip',
+                   // buttons: [
+
+                   //     'excelHtml5',
+                  //      'csvHtml5',
+                //        'pdfHtml5'
+                //    ]
+             //   });
+           // });
+        </script>
+<link rel="stylesheet" type="text/css" href="assets/plugin/datatables/DataTablesLatest/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="assets/css/font.css" >
+
+
+<script type="text/javascript" src="assets/plugin/datatables/DataTablesLatest/datatables.min.js"></script>
+
+<script>
+                   $(document).ready(function () {
+                      $('#example').DataTable();
+                   });
+         //   $(document).ready(function () {
+         //       var table = $('#example').DataTable({
+         //           lengthChange: true,
+         //           buttons: [ 'excel', 'pdf', 'colvis']
+         //       });
+
+          //      table.buttons().container()
+          //              .appendTo('#example_wrapper .col-md-6:eq(0)');
+          //  });
+        </script>
+        <style>
+            .dataTables_length{
+                padding-bottom: 10px !important;
+            }
+            
+        </style>
+</body>
+
+</html>

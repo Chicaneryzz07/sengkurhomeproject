@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:insert="generalfrags.html :: headerfiles">
+
+
+    <!-- google fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet"> -->
+
+
+</head>
+<title>Seng Kur Dkhar | Error</title>
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <div th:insert="generalfrags.html :: nav">
+
+        </div>
+
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form-->
+                <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+
+                    <div th:if="${param.success}" class=" text-center mb-5 ">
+
+                        <div class="alert alert-success">
+
+                            The reset password link has been sent to your email. Please Check.
+                            <br>
+
+
+                        </div>
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
+
+
+                    <div th:if="${param.error}" class=" text-center mb-5">
+
+                        <div class="alert alert-danger" th:text="${error}">
+                           <br>
+                            <!--                                <a href="login">Click here to Login</a>-->
+
+                        </div>
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
+
+
+
+
+
+
+
+                    <div class="text-center mb-5">
+
+                        <img th:src="@{/assets/assets/skds_logo_sm.jpg}" height="100px" width="100px" class="img-thumbnail img-fluid"/>
+
+                        <h1 class="fw-bolder" id="title" th:text="${title}"></h1>
+
+                    </div>
+
+                    <div th:if="${errormessage!=null}" class=" text-center mb-5">
+
+                        <div class="alert alert-danger" th:text="${errormessage}">
+                            <br>
+                            <!--                                <a href="login">Click here to Login</a>-->
+
+                        </div>
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
+                    <h1> Sorry, we couldn't find the page you were looking for. </h1>
+                    <p><a th:href="@{/index}">Go Home</a></p>
+
+                </div>
+                <!-- Contact cards-->
+                <!--                    <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-chat-dots"></i></div>-->
+                <!--                            <div class="h5 mb-2">Chat with us</div>-->
+                <!--                            <p class="text-muted mb-0">Chat live with one of our support specialists.</p>-->
+                <!--                        </div>-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-people"></i></div>-->
+                <!--                            <div class="h5">Ask the community</div>-->
+                <!--                            <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>-->
+                <!--                        </div>-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-question-circle"></i></div>-->
+                <!--                            <div class="h5">Support center</div>-->
+                <!--                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>-->
+                <!--                        </div>-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-telephone"></i></div>-->
+                <!--                            <div class="h5">Call us</div>-->
+                <!--                            <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+            </div>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer  th:replace="generalfrags.html :: footer">
+
+    </footer>
+    <!-- Bootstrap core JS-->
+
+
+    <!-- Core theme JS-->
+    <!--        <script src="assets/js/scripts.js"></script>-->
+</body>
+
+</html>

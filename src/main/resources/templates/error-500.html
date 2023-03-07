@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:insert="generalfrags.html :: headerfiles">
+</head>
+<title>Seng Kur Dkhar | Error</title>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <div th:insert="generalfrags.html :: nav">
+
+        </div>
+
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form-->
+                <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+
+
+
+
+
+
+
+                    <div class="text-center mb-5">
+
+                        <img th:src="@{/assets/assets/skds_logo_sm.jpg}" height="100px" width="100px" class="img-thumbnail img-fluid"/>
+
+                        <h1 class="fw-bolder" id="title" th:text="${title}"></h1>
+
+                    </div>
+
+                    <div th:if="${errormessage!=null}" class=" text-center mb-5">
+
+                        <div class="alert alert-danger" th:text="${errormessage}">
+                            <br>
+                            <!--                                <a href="login">Click here to Login</a>-->
+
+                        </div>
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
+                    <h1> Sorry, it seems there's a Server Error, please try again later. </h1>
+                    <p><a th:href="@{/index}">Go Home</a></p>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer  th:replace="generalfrags.html :: footer">
+
+    </footer>
+
+    <!-- Core theme JS-->
+    <!--        <script src="assets/js/scripts.js"></script>-->
+</body>
+
+</html>

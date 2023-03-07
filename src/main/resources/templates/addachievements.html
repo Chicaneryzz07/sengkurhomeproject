@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <head th:insert="generalfrags.html :: headerfiles">
+
+
+
+</head>
+    <title>Seng Kur Dkhar | Add Achievements</title>
+    <!-- Favicon-->
+
+    <style>
+            .dataTables_length{
+                padding-bottom: 10px !important;
+            }
+            .hiddenform{
+                    display:none;
+
+            }
+
+
+    </style>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index">Seng Kur Dkhar Sawkpoh</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item "><a class="nav-link " href="index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                        <!--                    <li class="nav-item "><a class="nav-link active" href="activities">Activities</a></li>-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" id="navbarDropdownActivities" href="#"
+                               role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">Achievements</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                <li><a class="dropdown-item active" href="academics">Academics</a></li>
+                                <li><a class="dropdown-item" href="entrepreneurship">Entrepreneurship</a></li>
+                                <li><a class="dropdown-item" href="awards">Awards</a></li>
+                                <li><a class="dropdown-item" href="felicitations">Felicitations</a></li>
+
+                            </ul>
+                        </li>
+
+
+                        <!--                    <li class="nav-item"><a class="nav-link" href="reports">Reports</a></li>-->
+                        <!-- <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                <li><a class="dropdown-item" href="reports">Reports</a></li>
+                                <li><a class="dropdown-item" href="endowment">Resources</a></li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                                <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                            </ul>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <!--                        <a class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="form1">Register</a>-->
+                            <a class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <!--            <header class="py-5">
+                        <div class="container px-5">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12 col-xxl-6">
+                                    <div class="text-center my-5">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>-->
+        <!-- About section one-->
+
+
+        <!--    modal-->
+
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Details of</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="recipient-name" class="col-form-label">Field of Study</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message-text" class="col-form-label">Description:</label>
+                                <p class="form-control" id="message-text">A brief description</p>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <!--                    <button type="button" class="btn btn-primary">Send message</button>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--    end modal-->
+        <section class="py-5 bg-light" id="scroll-target">
+            <div class="container-fluid px-5 my-2">
+                <div class="section-title">
+                    <h2>Add Achievements</h2>
+                    <!--                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint-->
+                    <!--                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit-->
+                    <!--                    in iste officiis commodi quidem hic quas.</p>-->
+                </div>
+                <label for="achievement" class="form-label">Select Achievement Type</label>
+
+                <div class="row gx-5 px-4 mb-3">
+                    <select class="form-select" id="achievement">
+                        <option value="-1">Select Achievement Type</option>
+                        <option value="1">Academics</option>
+                        <option value="2">Entrepreneurship</option>
+                        <option value="3">Awards</option>
+                        <option value="4">Felicitations</option>
+
+                    </select>
+                </div>
+                <div class="row gx-5 " id="hiddenform">
+                    <form>
+                        <div class="mb-3">
+                            <label for="kyrteng" class="form-label">Kyrteng jong ki Nongioh Khusnam</label>
+                            <input type="text" class="form-control" id="kyrteng"
+                                   aria-describedby="Kyrteng jong ki Nongioh Khusnam">
+                            <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                        </div>
+                        <div class="mb-3">
+                            <label for="field" class="form-label">Field</label>
+                            <input type="text" class="form-control" id="field" aria-describedby="field">
+                            <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                        </div>
+                        <div class="mb-3">
+                            <label for="details" class="form-label">Details</label>
+                            <input type="text" class="form-control" id="details" aria-describedby="Details">
+                            <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                        </div>
+                        <div class="mb-3">
+                            <label for="dorbar" class="form-label">Dorbar</label>
+                            <!--                            <input type="text" class="form-control" id="dorbar" aria-describedby="Dorbar">-->
+                            <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+
+<!--                            <select class="form-select" th:field="${dorbars}" id="dorbar">-->
+<!--                                <option value="-1">Select Dorbar</option>-->
+<!--                                <option th:each="d : ${dorbars}" th:value="${d.dorbarcode}"-->
+<!--                                        th:text="${d.kyrteng_dorbar}"></option>-->
+<!--                            </select>-->
+                            <input type="text" class="form-control" id="dorbar" aria-describedby="dorbar"  >
+                        </div>
+                        <div class="mb-3">
+                            <!--                            <label for="date" class="form-label">Date</label>-->
+                            <!--                            <input type="text" class="form-control" id="date" aria-describedby="date">-->
+                            <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" name="birthday">
+                        </div>
+                        <div class="mb-3">
+                            <label for="venue" class="form-label">Venue</label>
+                            <input type="text" class="form-control" id="venue" aria-describedby="Venue">
+                            <!--                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                        </div>
+
+                        <button type="button" class="btn btn-primary" onclick="validate()">Save</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- About section two-->
+
+    </main>
+    <!-- Footer-->
+    <footer  th:replace="generalfrags.html :: footer">
+
+    </footer>
+    <script src="assets/js/addachievements.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/plugin/datatables/DataTablesLatest/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/font.css">
+
+
+    <script type="text/javascript" src="assets/plugin/datatables/DataTablesLatest/datatables.min.js"></script>
+
+
+
+</body>
+
+</html>
