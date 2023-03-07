@@ -18,4 +18,6 @@ public interface Doa {
 
     Users getUserByPhone(String phone);
 
+    List<M_Achievements> getAchievementsName();
+
 }

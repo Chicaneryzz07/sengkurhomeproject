@@ -2,6 +2,7 @@ package com.dkhar.sengkur.controller;
 
 import com.dkhar.sengkur.dao.Doa;
 import com.dkhar.sengkur.model.*;
+import com.dkhar.sengkur.repository.AchievementsRepository;
 import com.dkhar.sengkur.repository.UserRepository;
 import com.dkhar.sengkur.service.UserServiceImpl;
 import com.dkhar.sengkur.service.Utility;
@@ -37,6 +38,9 @@ public class MainController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private AchievementsRepository achievementsRepository;
 
 //    @GetMapping("/fragments")
 //    public String getHome() {
@@ -91,8 +95,9 @@ public class MainController {
 
     @GetMapping("/academics")
     public String academics(Model model) {
-//        model.addAttribute("name", name);
-        model.addAttribute("academics", doa.getAllAcademics());
+
+        model.addAttribute("academics",achievementsRepository.findByAchievement_Id(1));
+        model.addAttribute("title","Academics");
         model.addAttribute("activesetting","active_ach");
         return "academics";
     }

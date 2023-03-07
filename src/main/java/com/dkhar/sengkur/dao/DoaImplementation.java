@@ -181,5 +181,22 @@ public class DoaImplementation implements Doa {
         return users;
     }
 
+    @Override
+    public List<M_Achievements> getAchievementsName() {
+        List<M_Achievements> mAchievements;
+
+
+
+            Session session =entityManager.unwrap(Session.class);
+            //SessionFactory sessionFactory = session.getSessionFactory();
+
+            Query query=session.createQuery("from M_Achievements order by achievement_name");
+            //query.setParameter("phone",phone);
+            mAchievements=  query.getResultList();;
+
+        System.out.println("mAchievements-->"+mAchievements);
+        return mAchievements;
+    }
+
 
 }

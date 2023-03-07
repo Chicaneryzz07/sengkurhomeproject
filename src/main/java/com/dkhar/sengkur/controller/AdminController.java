@@ -3,27 +3,31 @@ package com.dkhar.sengkur.controller;
 import com.dkhar.sengkur.dao.Doa;
 import com.dkhar.sengkur.exception.ResourceNotFoundException;
 import com.dkhar.sengkur.model.Academics;
+import com.dkhar.sengkur.model.M_Achievements;
+import com.dkhar.sengkur.model.T_AllAchievements;
 import com.dkhar.sengkur.model.Users;
+import com.dkhar.sengkur.repository.AchievementsRepository;
 import com.dkhar.sengkur.repository.UserRepository;
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.time.LocalDate;
 
-@Controller(value = "/admin")
+@Controller
+@RequestMapping("/admin")
 public class AdminController {
     @Autowired
     private Doa doa;
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private AchievementsRepository achievementsRepository;
 
 
     @GetMapping("/addachievements")
@@ -31,7 +35,8 @@ public class AdminController {
        // System.out.println("Principal::"+principal.getName());
         //Users users=userRepository.findByEmail(principal.getName());
        // if(users.getRoleid().getRoleid()==1){
-            model.addAttribute("dorbars", doa.getAllDorbar());
+            model.addAttribute("achievementsname",doa.getAchievementsName());
+
 
             return "addachievements";
     //}
@@ -48,21 +53,35 @@ public class AdminController {
     @ResponseBody
     public String saveacademics(Model model,String achievement, String kyrteng, String field, String details, String dorbar, String date, String venue) {
 //        model.addAttribute("name", name);
-        Academics a = new Academics();
-        a.setKyrteng(kyrteng);
-        a.setField(field);
-        a.setDorbar(dorbar);
-        a.setDetails(details);
+
+        T_AllAchievements tAllAchievements = new T_AllAchievements();
+        M_Achievements m_achievements=new M_Achievements();
+
+
+        m_achievements.setAchievement_id(Integer.parseInt(achievement));
+
+        tAllAchievements.setAchievement_id(m_achievements);
+        tAllAchievements.setKyrteng(kyrteng);
+        tAllAchievements.setField(field);
+        tAllAchievements.setDorbar(dorbar);
+        tAllAchievements.setDetails(details);
         System.out.println("date-->" + date);
         LocalDate dn = null;
         if (!date.isEmpty()) {
             dn = LocalDate.parse(date);
         }
 
-        a.setSnem(dn);
-        a.setVenue(venue);
+        tAllAchievements.setSnem(dn);
+        tAllAchievements.setVenue(venue);
 
-        String rs = doa.saveacademics(a);
+        String rs = "-1";
+        try{
+        achievementsRepository.save(tAllAchievements);
+        rs="1";
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
 
 
         return rs;

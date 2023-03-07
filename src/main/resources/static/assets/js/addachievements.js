@@ -17,10 +17,13 @@
 
 
                    $( "#achievement" ).on('change', function() {
-
+                                    if($('#achievement').val()!=-1)
                                         $('#hiddenform').show();
+                                       else{
+                                       $('#hiddenform').hide();
+                                       }
 
-                               });
+                    });
 
             });
 
@@ -62,7 +65,7 @@
                             alert("Data Saved Successfully");
                             location.reload();
                         } else {
-                            alert("Data Not Saved ");
+                            alert("Sorry, Data was Not Saved, Please try again. ");
                         }
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
@@ -72,7 +75,7 @@
                       });
 
                       }else{
-                                            alert('Not Saved');
+                                alert('Data was Not Saved');
 
                       }
 
