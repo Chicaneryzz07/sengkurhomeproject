@@ -2,190 +2,199 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head th:insert="generalfrags.html :: headerfiles">
-    </head>
+</head>
 <!--    <title>Seng Kur Dkhar | Register</title>-->
 
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <div sec:authorize="hasAuthority('ADMIN')">
-                <div th:replace="adminfrags.html :: admin">
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <div sec:authorize="hasAuthority('ADMIN')">
+            <div th:replace="adminfrags.html :: admin">
 
-                </div>
             </div>
+        </div>
 
-            <div th:if="!${#request.userPrincipal}">
-                <div th:replace="generalfrags.html :: nav">
+        <div th:if="!${#request.userPrincipal}">
+            <div th:replace="generalfrags.html :: nav">
 
-                </div>
             </div>
+        </div>
 
-            <div sec:authorize="hasAuthority('HEAD_OF_HOME')">
-                <div th:replace="generalfrags.html :: nav">
+        <div sec:authorize="hasAuthority('HEAD_OF_HOME')">
+            <div th:replace="generalfrags.html :: nav">
 
-                </div>
             </div>
-            <!-- Page content-->
-            <section class="py-5">
-                <div class="container px-5">
-                    <!-- Contact form-->
-                    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+        </div>
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form-->
+                <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
 
-                        <div th:if="${param.success}" class=" text-center mb-5">
+                    <div th:if="${param.success}" class=" text-center mb-5">
 
-                            <div class="alert alert-success">
-                                You have successfully registered.<br>
-                                <a href="login">Click here to Login</a>
+                        <div class="alert alert-success">
+                            You have successfully registered.<br>
+                            <a href="login">Click here to Login</a>
 
-                            </div>
-                            <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
                         </div>
-                        <div th:if="${param.error}" class=" text-center mb-5">
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
+                    <div th:if="${param.error}" class=" text-center mb-5">
 
-                            <div class="alert alert-danger">
-                                Registration Failed, Please Try again<br>
-<!--                                <a href="login">Click here to Login</a>-->
+                        <div class="alert alert-danger">
+                            Registration Failed, Please Try again<br>
+                            <!--                                <a href="login">Click here to Login</a>-->
 
-                            </div>
-                            <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
                         </div>
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
 
-                        <div th:if="${param.emailexist}" class=" text-center mb-5">
+                    <div th:if="${param.emailexist}" class=" text-center mb-5">
 
-                            <div class="alert alert-warning">
-                                Email Already registered<br>
-                                <a href="login">Click here to Login</a>
+                        <div class="alert alert-warning">
+                            Email Already registered<br>
+                            <a href="login">Click here to Login</a>
 
-                            </div>
-                            <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
                         </div>
-                        <div th:if="${param.phoneexist}" class=" text-center mb-5">
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
+                    <div th:if="${param.phoneexist}" class=" text-center mb-5">
 
-                            <div class="alert alert-warning">
-                                Phone number Already registered<br>
-                                <a href="login">Click here to Login</a>
+                        <div class="alert alert-warning">
+                            Phone number Already registered<br>
+                            <a href="login">Click here to Login</a>
 
-                            </div>
-                            <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
                         </div>
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
 
 
-                        <div class="text-center mb-5">
+                    <div class="text-center mb-5">
 
-                                <img src="assets/assets/skds_logo_sm.jpg" height="100px" width="100px" class="img-thumbnail img-fluid"/>
+                        <img src="assets/assets/skds_logo_sm.jpg" height="100px" width="100px"
+                            class="img-thumbnail img-fluid" />
 
-                            <h1 class="fw-bolder">Register</h1>
-                            <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
-                        </div>
-                        <div class="row gx-5 justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
+                        <h1 class="fw-bolder">Register</h1>
+                        <!--<p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>-->
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
 
-                                <form th:action="@{/saveregistration}" method="post" th:object="${userdetails}">
-                                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <form th:action="@{/saveregistration}" method="POST" th:object="${userdetails}">
+                               
 
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <div class="form-outline">
-                                                <input type="text" id="first_name" class="form-control" th:field="*{first_name}" required autofocus="autofocus"  />
-                                                <label class="form-label" for="first_name">First name</label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <div class="form-outline">
-                                                <input type="text" id="middle_name" class="form-control" th:field="*{middle_name}" />
-                                                <label class="form-label" for="middle_name">Middle name</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row mb-4">
+                                <div class="row mb-4">
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="last_name" class="form-control" required autofocus="autofocus" th:field="*{last_name}"  />
+                                            <input type="text" id="first_name" class="form-control"
+                                                th:field="*{first_name}" name="first_name" required
+                                                autofocus="autofocus" />
+                                            <label class="form-label" for="first_name">First name</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="middle_name" class="form-control"
+                                                th:field="*{middle_name}" name="last name" />
+                                            <label class="form-label" for="middle_name">Middle name</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="last_name" class="form-control" required
+                                                autofocus="autofocus" th:field="*{last_name}" />
                                             <label class="form-label" for="last_name">Last name</label>
                                         </div>
                                     </div>
-                                    </div>
-                                    <div class="row mb-4">
-                                        <div class="col">
-                                            <div class="form-outline">
-                                                <input type="tel" pattern="[0-9]{10}" id="phone" class="form-control" maxlength="10"
-                                                       oninvalid="this.setCustomValidity('Please enter a valid phone number')"
-                                                       oninput="setCustomValidity('')"   required autofocus="autofocus" th:field="*{phone}" />
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="tel" pattern="[0-9]{10}" id="phone" class="form-control"
+                                                maxlength="10"
+                                                oninvalid="this.setCustomValidity('Please enter a valid phone number')"
+                                                oninput="setCustomValidity('')" required autofocus="autofocus"
+                                                th:field="*{phone}" />
 
-                                                <label class="form-label" for="phone">Phone No.</label>
-                                            </div>
+                                            <label class="form-label" for="phone">Phone No.</label>
                                         </div>
                                     </div>
+                                </div>
 
 
 
-                                    <!-- Email input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="email" id="form3Example3" class="form-control" required autofocus="autofocus" th:field="*{email}" />
-                                        <label class="form-label" for="form3Example3">Email address</label>
-                                    </div>
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="form3Example3" class="form-control" required
+                                        autofocus="autofocus" th:field="*{email}" />
+                                    <label class="form-label" for="form3Example3">Email address</label>
+                                </div>
 
-                                    <!-- Password input -->
-                                    <div class="form-outline mb-4">
-                                        <input type="password" id="form3Example4" class="form-control" required autofocus="autofocus" th:field="*{password}" />
-                                        <label class="form-label" for="form3Example4">Password</label>
-                                    </div>
-
-                                   
-
-                                    <!-- Submit button -->
-<!--                                    <div  style="text-align: right">-->
-                                    <button type="submit" class="btn btn-primary btn-block mb-4 ">Sign up</button>
-<!--                                    </div>-->
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="form3Example4" class="form-control" required
+                                        autofocus="autofocus" th:field="*{password}" />
+                                    <label class="form-label" for="form3Example4">Password</label>
+                                </div>
 
 
-                                </form>
-                            </div>
+
+                                <!-- Submit button -->
+                                <!--                                    <div  style="text-align: right">-->
+                                <button type="submit" class="btn btn-primary btn-block mb-4 ">Sign up</button>
+                                <!--                                    </div>-->
+
+
+                            </form>
                         </div>
                     </div>
-                    <!-- Contact cards-->
-<!--                    <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">-->
-<!--                        <div class="col">-->
-<!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
-<!--                                    class="bi bi-chat-dots"></i></div>-->
-<!--                            <div class="h5 mb-2">Chat with us</div>-->
-<!--                            <p class="text-muted mb-0">Chat live with one of our support specialists.</p>-->
-<!--                        </div>-->
-<!--                        <div class="col">-->
-<!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
-<!--                                    class="bi bi-people"></i></div>-->
-<!--                            <div class="h5">Ask the community</div>-->
-<!--                            <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>-->
-<!--                        </div>-->
-<!--                        <div class="col">-->
-<!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
-<!--                                    class="bi bi-question-circle"></i></div>-->
-<!--                            <div class="h5">Support center</div>-->
-<!--                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>-->
-<!--                        </div>-->
-<!--                        <div class="col">-->
-<!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
-<!--                                    class="bi bi-telephone"></i></div>-->
-<!--                            <div class="h5">Call us</div>-->
-<!--                            <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
                 </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer  th:replace="generalfrags.html :: footer">
+                <!-- Contact cards-->
+                <!--                    <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-chat-dots"></i></div>-->
+                <!--                            <div class="h5 mb-2">Chat with us</div>-->
+                <!--                            <p class="text-muted mb-0">Chat live with one of our support specialists.</p>-->
+                <!--                        </div>-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-people"></i></div>-->
+                <!--                            <div class="h5">Ask the community</div>-->
+                <!--                            <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>-->
+                <!--                        </div>-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-question-circle"></i></div>-->
+                <!--                            <div class="h5">Support center</div>-->
+                <!--                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>-->
+                <!--                        </div>-->
+                <!--                        <div class="col">-->
+                <!--                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i-->
+                <!--                                    class="bi bi-telephone"></i></div>-->
+                <!--                            <div class="h5">Call us</div>-->
+                <!--                            <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+            </div>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer th:replace="generalfrags.html :: footer">
 
-        </footer>
+    </footer>
 
-        <!-- Core theme JS-->
-<!--        <script src="assets/js/scripts.js"></script>-->
-    </body>
+    <!-- Core theme JS-->
+    <!--        <script src="assets/js/scripts.js"></script>-->
+</body>
 
 </html>

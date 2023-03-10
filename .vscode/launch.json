@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SengkurApplication<sengkur>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.dkhar.sengkur.SengkurApplication",
+      "projectName": "sengkur",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

@@ -7,7 +7,6 @@ import com.dkhar.sengkur.repository.UserRepository;
 import com.dkhar.sengkur.service.UserServiceImpl;
 import com.dkhar.sengkur.service.Utility;
 
-
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -30,7 +29,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
 
-
 @Controller
 public class MainController {
     @Autowired
@@ -49,31 +47,33 @@ public class MainController {
 
     @GetMapping("/index")
     public String index(Model model) {
-//        model.addAttribute("name", name);
+        // model.addAttribute("name", name);
         model.addAttribute("title", "Home");
 
         return "index";
     }
 
-    //Getting parameters from views
-//    @GetMapping("/about")
-//    public String about(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
-//        model.addAttribute("title","Error 404");
-//
-//        return "about";
-//    }
+    // Getting parameters from views
+    // @GetMapping("/about")
+    // public String about(@RequestParam(name = "name", required = false,
+    // defaultValue = "World") String name, Model model) {
+    // model.addAttribute("title","Error 404");
+    //
+    // return "about";
+    // }
     @GetMapping("/about")
-    public String about(@RequestParam(name = "name", required = false, defaultValue = "World") String name, Model model) {
+    public String about(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
+            Model model) {
         model.addAttribute("title", "About");
 
         return "about";
     }
 
     @GetMapping("/register")
-    public String register( Model model) {
+    public String register(Model model) {
         model.addAttribute("title", "Register");
         model.addAttribute("activesetting", "active_reg");
-
+        model.addAttribute("userdetails", new Users());
         return "register";
     }
 
@@ -150,24 +150,22 @@ public class MainController {
         model.addAttribute("title", "Login");
         return "login";
     }
-//    @GetMapping("/logout")
-//    public String logout(Model model) {
-////        model.addAttribute("name", name);
-////        return "login?logout";
-//        return "redirect:/login?logout";
-//    }
+    // @GetMapping("/logout")
+    // public String logout(Model model) {
+    //// model.addAttribute("name", name);
+    //// return "login?logout";
+    // return "redirect:/login?logout";
+    // }
 
-
-    //    @GetMapping("/testdb")
-//    @ResponseBody
+    // @GetMapping("/testdb")
+    // @ResponseBody
     @RequestMapping(value = "/testdb", method = RequestMethod.GET)
 
     public String test_db(Model model) {
-//        model.addAttribute("name", name);
+        // model.addAttribute("name", name);
         List<District> x = null;
         try {
             x = doa.getAllDistrict();
-
 
         } catch (Exception e) {
             System.out.println("exception-->" + e);
@@ -177,66 +175,14 @@ public class MainController {
         return "test_db";
     }
 
-//    @GetMapping("/testdb")
-//    public String getAllTutorials(@RequestParam(required = false) String districtname,Model model) {
-//        try {
-//            List<District> tutorials = new ArrayList<District>();
-//
-//
-//                //districtRepo.findByTitleContaining(districtname).forEach(tutorials::add);
-//            districtRepo.findAll();
-//
-//
-//            //return new ResponseEntity<>(tutorials, HttpStatus.OK);
-//        } catch (Exception e) {
-//            //return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//        }
-//        model.addAttribute("districtname", districtRepo.findAll());
-//        return "test_db";
-//    }
-
-//    @PostMapping("/add")
-//    public String add( Model model) {
-////        model.addAttribute("name", name);
-//        Test_table t=new Test_table();
-//        t.setFirstname("micha");
-//        t.setLastname("lastname");
-//        t.setEmail("email.com");
-//
-//        doa.add(t);
-//        return "index";
-//    }
-
-//    @GetMapping("/add")
-//    public String add1(Model model) {
-////        model.addAttribute("name", name);
-//        Test_table t = new Test_table();
-//        t.setFirstname("micha");
-//        t.setLastname("lastname");
-//        t.setEmail("email.com");
-//
-//        doa.add(t);
-//        return "index";
-//    }
-
-
-
-
     @PostMapping(value = "/saveregistration")
     public String saveregistration(Model model, @ModelAttribute("userdetails") Users user) {
 
         String rs = "0";
-//        model.addAttribute("name", name);
+        // model.addAttribute("name", name);
 
         user.setRoleid(new M_roles(2));
         rs = doa.saveUser(user);
-//        try{
-//        userRepository.save(user);
-//            rs="1";
-//        }catch (Exception e){
-//            System.out.println("Save registration:"+e);
-//        }
-        //System.out.println("rs->" + rs);
 
         if (rs.equals("1"))
             return "redirect:/register?success";
@@ -248,15 +194,13 @@ public class MainController {
         return "redirect:/register?error";
     }
 
-
-
     @GetMapping("/forgotpassword")
     public String forgotpassword(Model model) {
 
         // phone = "1235134123";
         // System.out.println("Phone controller"+phone);
-//        model.addAttribute("user", doa.getUserByPhone(phone));
-//        return
+        // model.addAttribute("user", doa.getUserByPhone(phone));
+        // return
         model.addAttribute("title", "Forgot Password");
 
         return "forgot_password_form";
@@ -271,18 +215,17 @@ public class MainController {
     public String processForgotPasswordForm(HttpServletRequest request, Model model) {
         String email = request.getParameter("email");
 
-
         String token = RandomString.make(45);
         System.out.println("Token:" + token);
         System.out.println("email:" + email);
         try {
             userService.updateResetPasswordToken(token, email);
-            //generate reset password link
+            // generate reset password link
             String resetpasswordlink = Utility.getSiteURL(request) + "/reset_password?token=" + token;
 
-            //System.out.println("resetpasswordlink:"+resetpasswordlink);
+            // System.out.println("resetpasswordlink:"+resetpasswordlink);
 
-            //send email
+            // send email
             sendEmail(email, resetpasswordlink);
 
         } catch (Exception e) {
@@ -291,7 +234,8 @@ public class MainController {
             return "forgot_password_form";
 
         }
-        //model.addAttribute("success","The reset password link has been sent to your email.");
+        // model.addAttribute("success","The reset password link has been sent to your
+        // email.");
 
         return "redirect:/forgotpassword?success";
     }
@@ -305,7 +249,6 @@ public class MainController {
         }
         model.addAttribute("token", token);
         model.addAttribute("title", "Reset Password");
-
 
         return "reset_password_form";
     }
@@ -328,12 +271,11 @@ public class MainController {
             model.addAttribute("success", "You have successfully changed your password");
         }
 
-
         return "reset_password_form";
     }
 
-
-    private void sendEmail(String email, String resetpasswordlink) throws MessagingException, UnsupportedEncodingException {
+    private void sendEmail(String email, String resetpasswordlink)
+            throws MessagingException, UnsupportedEncodingException {
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
         helper.setFrom("sengkurdkharsawkpoh@gmail.com", "Sengkur Dkhar Support");
@@ -351,16 +293,13 @@ public class MainController {
         mailSender.send(message);
     }
 
-
     @GetMapping("/getUserByPhone")
     public String getUserByPhone(Model model, @ModelAttribute("phone") String phone) {
 
         // phone = "1235134123";
         System.out.println("Phone controller" + phone);
         model.addAttribute("user", doa.getUserByPhone(phone));
-//        return
+        // return
         return "test_page";
     }
 }
-
-

@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" >
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <body>
 
@@ -11,28 +11,36 @@
             <div class="container px-5">
                 <a class="navbar-brand" th:href="@{/index}" id="brand">Seng Kur Dkhar Sawkpoh</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"><span
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
                         class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContentAdmin">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li  class="nav-item "><a th:classappend="${#httpServletRequest.getRequestURI() == '/index' ? 'active':''}" class="nav-link " th:href="@{/index}">Home</a></li>
+                        <li class="nav-item "><a
+                                th:classappend="${#httpServletRequest.getRequestURI() == '/index' ? 'active':''}"
+                                class="nav-link " th:href="@{/index}">Home</a></li>
 
-                        <li class="nav-item"><a class="nav-link" th:href="@{/admin/addachievements}">Add Achievements</a></li>
+                        <li class="nav-item"><a
+                                th:classappend="${activesetting == 'active_addachievements' ? 'active':''}"
+                                class="nav-link" th:href="@{/admin/addachievements}">Add Achievements</a></li>
                         <!--                    <li class="nav-item "><a class="nav-link active" href="activities">Activities</a></li>-->
-
+                        <li class="nav-item"><a
+                                th:classappend="${activesetting == 'active_viewallachievements' ? 'active':''}"
+                                class="nav-link" th:href="@{/admin/viewallachievements}">View Achievements</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle " id="navbarDropdownActivitiesAdmin" href="#" role="button"
-
-                               th:classappend="${activesetting == 'active_ach' ? 'active':''}"
-
-                               data-bs-toggle="dropdown" aria-expanded="false">Achievements</a>
+                            <a class="nav-link dropdown-toggle " id="navbarDropdownActivitiesAdmin" href="#"
+                                role="button" th:classappend="${activesetting == 'active_ach' ? 'active':''}"
+                                data-bs-toggle="dropdown" aria-expanded="false">Achievements</a>
 
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/academics' ? 'active':''}" class="dropdown-item" th:href="@{/academics}">Academics</a></li>
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/entrepreneurship' ? 'active':''}" class="dropdown-item" th:href="@{/entrepreneurship}">Entrepreneurship</a></li>
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/awards' ? 'active':''}" class="dropdown-item" th:href="@{/awards}">Awards</a></li>
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/felicitations' ? 'active':''}" class="dropdown-item" th:href="@{/felicitations}">Felicitations</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/academics' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/academics}">Academics</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/entrepreneurship' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/entrepreneurship}">Entrepreneurship</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/awards' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/awards}">Awards</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/felicitations' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/felicitations}">Felicitations</a></li>
 
                             </ul>
                         </li>
@@ -43,11 +51,13 @@
                         <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle " id="navbarDropdownBlogAdmin" href="#" role="button"
-                               th:classappend="${activesetting == 'active_rep' ? 'active':''}"
-                               data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+                                th:classappend="${activesetting == 'active_rep' ? 'active':''}"
+                                data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/reports' ? 'active':''}" class="dropdown-item" th:href="@{/reports}">Reports</a></li>
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/endowment' ? 'active':''}" class="dropdown-item" th:href="@{/endowment}">Resources</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/reports' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/reports}">Reports</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/endowment' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/endowment}">Resources</a></li>
                             </ul>
                         </li>
                         <!--
@@ -61,12 +71,14 @@
                         </li> -->
 
                         <li sec:authorize="isAnonymous()" class="nav-item dropdown">
-                            <a  class="nav-link dropdown-toggle" id="registerdropdownAdmin" href="#" role="button"
+                            <a class="nav-link dropdown-toggle" id="registerdropdownAdmin" href="#" role="button"
                                 th:classappend="${activesetting == 'active_reg' ? 'active':''}"
                                 data-bs-toggle="dropdown" aria-expanded="false">Register</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="registerdropdown">
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/register' ? 'active':''}" class="dropdown-item" th:href="@{/register}">Register</a></li>
-                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/login' ? 'active':''}" class="dropdown-item" th:href="@{/login}">Login</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/register' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/register}">Register</a></li>
+                                <li><a th:classappend="${#httpServletRequest.getRequestURI() == '/login' ? 'active':''}"
+                                        class="dropdown-item" th:href="@{/login}">Login</a></li>
                             </ul>
                             <!--                            <a sec:authorize="isAnonymous()" class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="/login">Login</a>-->
                         </li>
@@ -75,7 +87,8 @@
 
                             <!--                            <p sec:authorize="isAuthenticated()" style="color:white;">Welcome, <span th:text ="${#authentication.getPrincipal().getDisplayName()}"></span>-->
                             <!--                            </p>-->
-                            <a sec:authorize="isAuthenticated()" class="btn btn-primary btn-sm px-2 me-sm-3 m-1" th:href="@{/logout}">Logout</a>
+                            <a sec:authorize="isAuthenticated()" class="btn btn-primary btn-sm px-2 me-sm-3 m-1"
+                                th:href="@{/logout}">Logout</a>
 
 
                             <!--                        <a class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="login">Login</a>-->
@@ -93,4 +106,5 @@
 
 
 </body>
+
 </html>
