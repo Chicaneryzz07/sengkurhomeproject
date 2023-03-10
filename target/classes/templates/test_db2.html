@@ -1,0 +1,284 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Seng Kur Dkhar | Test DB</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/assets/favicon.ico"/>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+
+    <link href="assets/css/styles.css" rel="stylesheet"/>
+
+    <link href="assets/plugin/bootstrap_icon/bootstrap-icons.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" type="text/css" href="/assets/plugin/datatables/DataTables/datatables.min.css"/>-->
+
+    <link href="assets/css/font.css" rel="stylesheet">
+
+</head>
+
+<body class="d-flex flex-column">
+<main class="flex-shrink-0">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index">Seng Kur Dkhar Sawkpoh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item "><a class="nav-link " href="index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                    <!--                    <li class="nav-item "><a class="nav-link active" href="activities">Activities</a></li>-->
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" id="navbarDropdownActivities" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">Achievements</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                            <li><a class="dropdown-item active" href="academics">Academics</a></li>
+                            <li><a class="dropdown-item" href="entrepreneurship">Entrepreneurship</a></li>
+                            <li><a class="dropdown-item" href="awards">Awards</a></li>
+                            <li><a class="dropdown-item" href="felicitations">Felicitations</a></li>
+
+                        </ul>
+                    </li>
+
+
+                    <!--                    <li class="nav-item"><a class="nav-link" href="reports">Reports</a></li>-->
+                    <!-- <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">Reports</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                            <li><a class="dropdown-item" href="reports">Reports</a></li>
+                            <li><a class="dropdown-item" href="endowment">Resources</a></li>
+                        </ul>
+                    </li>
+                    <!--
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Portfolio</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                            <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
+                            <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <!--                        <a class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="form1">Register</a>-->
+                        <a class="mybtn btn btn-primary btn-sm px-2 me-sm-3 m-1" href="login">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Header-->
+    <!--            <header class="py-5">
+                    <div class="container px-5">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12 col-xxl-6">
+                                <div class="text-center my-5">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>-->
+    <!-- About section one-->
+
+
+    <!--    modal-->
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Details of</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Field of Study</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Description:</label>
+                            <p class="form-control" id="message-text">A brief description</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!--                    <button type="button" class="btn btn-primary">Send message</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--    end modal-->
+    <section class="py-5 bg-light" id="scroll-target">
+        <div class="container-fluid px-5 my-2">
+            <div class="section-title">
+                <h2>Academics</h2>
+                <!--                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint-->
+                <!--                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit-->
+                <!--                    in iste officiis commodi quidem hic quas.</p>-->
+            </div>
+            <div class="row gx-2">
+
+
+                    <div class="col-lg-5">
+                        <select class="form-select" th:field="${dorbars}" id="dropOperator">
+                            <option value="-1">Select District</option>
+                            <option th:each="d : ${dorbars}" th:value="${d.first_name}"
+                                    th:text="${d.email}"></option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-lg-5">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+    <!-- About section two-->
+
+
+
+</main>
+<!-- Footer-->
+<footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto">
+                <div class="small m-0 text-white">Copyright &copy; Your Website 2022</div>
+            </div>
+            <div class="col-auto">
+                <a class="link-light small" href="#!">Privacy</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Terms</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS-->
+<!--<script src="assets/plugin/bootstrap_js/bootstrap.bundle.min.js"></script>-->
+<!-- Core theme JS-->
+<!--<script src="assets/js/addachievements.js" ></script>-->
+<!--        <link rel="stylesheet" type="text/css" href="assets/plugin/datatables/dTable/jquery-ui.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/plugin/datatables/dTable/dataTables.jqueryui.min.css"/>-->
+
+<!--<script src="assets/plugin/datatables/jquery-3.5.1.js" ></script>-->
+<script src="assets/plugin/jquery/jquery-3.6.0.min.js"></script>
+<script src="assets/plugin/vscroll/jquery.autoscroll.js"></script>
+<script src="assets/plugin/bootstrap_js/bootstrap.bundle.min.js"></script>
+
+
+<!--<script type="text/javascript" src="assets/plugin/datatables/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/dTable/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/dTable/dataTables.jqueryui.min.js"></script>
+
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/Buttons-2.2.3/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/JSZip-2.5.0/jszip.min.js"></script>
+
+<script type="text/javascript" src="assets/plugin/datatables/DataTables/Buttons-2.2.3/js/buttons.html5.min.js"></script>
+-->
+
+<script>
+            $(document).ready(function () {
+                 $('#example').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [
+                       // 'copy',
+                         'excel',
+                         'pdf',
+                         'pageLength'
+                         ]
+                });
+            });
+
+
+
+
+
+
+</script>
+<link rel="stylesheet" type="text/css" href="assets/plugin/datatables/DataTablesLatest/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="assets/css/font.css">
+
+
+<script type="text/javascript" src="assets/plugin/datatables/DataTablesLatest/datatables.min.js"></script>
+
+<script>
+
+
+                   var exampleModal = document.getElementById('exampleModal')
+                            exampleModal.addEventListener('show.bs.modal', function (event) {
+                             // Button that triggered the modal
+                            var button = event.relatedTarget
+                            // Extract info from data-bs-* attributes
+                            var recipient = button.getAttribute('data-bs-whatever')
+                            var recipientname = button.getAttribute('data-bs-whatever1')
+                             // If necessary, you could initiate an AJAX request here
+                                // and then do the updating in a callback.
+                                //
+                            // Update the modal's content.
+                            var modalTitle = exampleModal.querySelector('.modal-title')
+                            var modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+                                modalTitle.textContent = 'Details of ' + recipientname
+                                modalBodyInput.value = recipient
+                    })
+
+
+
+
+</script>
+<style>
+            .dataTables_length{
+                padding-bottom: 10px !important;
+            }
+
+
+
+
+</style>
+</body>
+
+</html>

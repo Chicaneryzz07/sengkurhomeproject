@@ -36,8 +36,9 @@ public class AdminController {
         //Users users=userRepository.findByEmail(principal.getName());
        // if(users.getRoleid().getRoleid()==1){
             model.addAttribute("achievementsname",doa.getAchievementsName());
+        model.addAttribute("title","Add Achievements");
 
-
+        model.addAttribute("activesetting", "active_addachievements");
             return "addachievements";
     //}
 //        else{
