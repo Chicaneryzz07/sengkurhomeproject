@@ -1,5 +1,7 @@
  $(document).ready(function () {
   $('#hiddenform').hide();
+  $('#hiddenform2').hide();
+  $('#hiddenform3').hide();
                  $('#example').DataTable({
                     dom: 'Bfrtip',
                     buttons: [
@@ -17,11 +19,20 @@
 
 
                    $( "#achievement" ).on('change', function() {
-                                    if($('#achievement').val()!=-1)
+                    $('#hiddenform2').hide();
+                    $('#hiddenform').hide();
+                    $('#hiddenform3').hide();
+                                    if($('#achievement').val()!=-1){
+                                       
                                         $('#hiddenform').show();
-                                       else{
-                                       $('#hiddenform').hide();
-                                       }
+                                        $('#hiddenform3').show();
+                                        if($('#achievement').val()==2){
+                                            $('#hiddenform2').show();
+                                            $('#hiddenform3').hide();
+                                        }
+                                        
+                                    }
+                                       
 
                     });
 
@@ -31,6 +42,11 @@
         function validate() {
                 // validation code
                //  alert("validation");
+                // if($('#achievement').val()==2){
+
+                    
+                // }
+
 
                 if($('#kyrteng').val()==''||$('#achievement').val()==-1){
                     alert("Please fill the highlighted field")
@@ -52,8 +68,12 @@
                       if(confirm('Do you really want to submit the form?')){
                       $.ajax({
                     type: "POST",
-                    url: "./saveacademics",
-                    data: {achievement: $('#achievement').val(),kyrteng: $('#kyrteng').val(), field: $('#field').val(), details: $('#details').val(), dorbar: $('#dorbar').val(), date: $('#date').val(), venue: $('#venue').val()},
+                    url: "./saveachievements",
+                    data: {achievement: $('#achievement').val(),kyrteng: $('#kyrteng').val(), field: $('#field').val(), 
+                    details: $('#details').val(), dorbar: $('#dorbar').val(), date: $('#date').val(),
+                     venue: $('#venue').val(),rank: $('#rank').val(),jingpule: $('#jingpule').val()
+                    
+                    },
 
                    // beforeSend: function (xhr)
                    // {

@@ -50,55 +50,50 @@
 
                 <div class="row gx-5 ">
                     <div class="col-lg-12 table-responsive">
-                        <table id="example" class="table table-striped" style="width:100%">
+                        <table id="example" class="table  table-bordered" style="width:100%">
                             <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Field</th>
-                                <th>Dated</th>
 
-                            </tr>
+                                <tr>
+
+                                    <th class="text-center" rowspan="2">Kyrteng jong ki Nongioh Khusnam</th>
+                                    <th class="text-center" colspan="2">Ka jingnoh synniang ha ka</th>
+                                    <th class="text-center" colspan="3">Ba la ai ha ka</th>
+                                    <!--                            <th></th>-->
+
+
+                                </tr>
+                                <tr>
+                                    <th class="text-center">Field</th>
+                                    <th class="text-center">Details</th>
+                                    <th class="text-center">Dorbar</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Venue</th>
+
+                                    <!--                            <th></th>-->
+
+                                </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>Name 1</td>
-                                <td>Field</td>
-                                <td>A brief description</td>
-                                <td>10/01/22</td>
+                            <tbody th:field="${achievements}">
+
+                                <tr th:each="a : ${achievements}">
 
 
-                            </tr>
-                            <tr>
-                                <td>Name 2</td>
-                                <td>Field</td>
-                                <td>A brief description</td>
-                                <td>11/10/22</td>
+                                    <td th:text="${a.kyrteng}" />
+                                    <td th:text="${a.field}" />
+                                    <td th:text="${a.details}" />
+                                    <td th:text="${a.dorbar}" />
+                                    <td th:text="${a.snem}" />
+                                    <td th:text="${a.venue}" />
 
 
-                            </tr>
-                            <tr>
-                                <td>Name 3</td>
-                                <td>Field</td>
-                                <td>A brief description</td>
-                                <td>03/11/22</td>
-
-
-                            </tr>
+                                </tr>
 
 
                             </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Dated</th>
-                                <th>Dated</th>
 
-                            </tr>
-                            </tfoot>
                         </table>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -121,38 +116,36 @@
     <script type="text/javascript" src="assets/plugin/datatables/DataTables/Buttons-2.2.3/js/buttons.html5.min.js"></script>
     -->
 
-    <!--        <script>
-                $(document).ready(function () {
-                    $('#example').DataTable({
-                        dom: 'Bfrtip',
-                        buttons: [
-
-                            'excelHtml5',
-                            'csvHtml5',
-                            'pdfHtml5'
-                        ]
-                    });
-                });
-            </script>-->
-    <link rel="stylesheet" type="text/css" href="assets/plugin/datatables/DataTablesLatest/datatables.min.css"/>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    // 'copy',
+                    'excel',
+                    'pdf',
+                    'pageLength'
+                ]
+            });
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="assets/plugin/datatables/DataTablesLatest/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/font.css">
 
 
     <script type="text/javascript" src="assets/plugin/datatables/DataTablesLatest/datatables.min.js"></script>
 
     <script>
-                    $(document).ready(function () {
-                       $('#example').DataTable();
-                   });
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
 
 
     </script>
     <style>
-            .dataTables_length{
-                padding-bottom: 10px !important;
-            }
-
-
+        .dataTables_length {
+            padding-bottom: 10px !important;
+        }
     </style>
 </body>
 

@@ -11,9 +11,9 @@ import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMailMessage;
+
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,12 +22,10 @@ import org.springframework.web.bind.annotation.*;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 import java.io.UnsupportedEncodingException;
-import java.security.Principal;
-import java.time.LocalDate;
+
 import java.util.List;
-import java.util.Random;
 
 @Controller
 public class MainController {
@@ -107,7 +105,7 @@ public class MainController {
     @GetMapping("/academics")
     public String academics(Model model) {
 
-        model.addAttribute("academics", achievementsRepository.findByAchievement_Id(1));
+        model.addAttribute("achievements", achievementsRepository.findByAchievement_Id(1));
         model.addAttribute("title", "Academics");
         model.addAttribute("activesetting", "active_ach");
         return "academics";
@@ -115,6 +113,8 @@ public class MainController {
 
     @GetMapping("/entrepreneurship")
     public String entrepreneurship(Model model) {
+        model.addAttribute("achievements", achievementsRepository.findByAchievement_Id(3));
+
         model.addAttribute("title", "Entrepreneurship");
         model.addAttribute("activesetting", "active_ach");
 
@@ -131,6 +131,8 @@ public class MainController {
 
     @GetMapping("/awards")
     public String awards(Model model) {
+        model.addAttribute("achievements", achievementsRepository.findByAchievement_Id(2));
+
         model.addAttribute("title", "Awards");
         model.addAttribute("activesetting", "active_ach");
 
@@ -139,6 +141,8 @@ public class MainController {
 
     @GetMapping("/felicitations")
     public String felicitations(Model model) {
+        model.addAttribute("achievements", achievementsRepository.findByAchievement_Id(4));
+
         model.addAttribute("title", "Felicitations");
         model.addAttribute("activesetting", "active_ach");
 
@@ -148,6 +152,7 @@ public class MainController {
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("title", "Login");
+        model.addAttribute("activesetting", "active_reg");
         return "login";
     }
     // @GetMapping("/logout")

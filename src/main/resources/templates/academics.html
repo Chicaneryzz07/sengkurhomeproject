@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head th:insert="generalfrags.html :: headerfiles">
+<head th:insert="generalfrags.html :: headerfiles">
 
 
 </head>
@@ -111,50 +111,41 @@
                     <div class="col-lg-12 table-responsive">
                         <table id="example" class="table  table-bordered" style="width:100%">
                             <thead>
-                            <tr>
-                                <th class="text-center" colspan="1">Felicitation</th>
-                                <th class="text-center" colspan="5">Na ka bynta ka jingnoh synniang ha ka liang ka Pule
-                                    puthi
-                                </th>
-                                <!--                            <th>Dated</th>-->
-                                <!--                            <th>View Details</th>-->
-                                <!--                            <th>Details</th>-->
 
-                            </tr>
-                            <tr>
+                                <tr>
 
-                                <th class="text-center" rowspan="2">Kyrteng jong ki Nongioh Khusnam</th>
-                                <th class="text-center" colspan="2">Ka jingnoh synniang ha ka</th>
-                                <th class="text-center" colspan="3">Ba la ai ha ka</th>
-                                <!--                            <th></th>-->
+                                    <th class="text-center" rowspan="2">Kyrteng jong ki Nongioh Khusnam</th>
+                                    <th class="text-center" colspan="2">Ka jingnoh synniang ha ka</th>
+                                    <th class="text-center" colspan="3">Ba la ai ha ka</th>
+                                    <!--                            <th></th>-->
 
 
-                            </tr>
-                            <tr>
-                                <th class="text-center">Field</th>
-                                <th class="text-center">Details</th>
-                                <th class="text-center">Dorbar</th>
-                                <th class="text-center">Date</th>
-                                <th class="text-center">Venue</th>
+                                </tr>
+                                <tr>
+                                    <th class="text-center">Field</th>
+                                    <th class="text-center">Details</th>
+                                    <th class="text-center">Dorbar</th>
+                                    <th class="text-center">Date</th>
+                                    <th class="text-center">Venue</th>
 
-                                <!--                            <th></th>-->
+                                    <!--                            <th></th>-->
 
-                            </tr>
+                                </tr>
                             </thead>
-                            <tbody th:field="${academics}">
+                            <tbody th:field="${achievements}">
 
-                            <tr th:each="a : ${academics}" >
-
-
-                                <td th:text="${a.kyrteng}"/>
-                                <td th:text="${a.field}"/>
-                                <td th:text="${a.details}"/>
-                                <td th:text="${a.dorbar}"/>
-                                <td th:text="${a.snem}"/>
-                                <td th:text="${a.venue}"/>
+                                <tr th:each="a : ${achievements}">
 
 
-                            </tr>
+                                    <td th:text="${a.kyrteng}" />
+                                    <td th:text="${a.field}" />
+                                    <td th:text="${a.details}" />
+                                    <td th:text="${a.dorbar}" />
+                                    <td th:text="${a.snem}" />
+                                    <td th:text="${a.venue}" />
+
+
+                                </tr>
 
 
                             </tbody>
@@ -169,29 +160,29 @@
 
     </main>
     <!-- Footer-->
-    <footer  th:replace="generalfrags.html :: footer">
+    <footer th:replace="generalfrags.html :: footer">
 
     </footer>
 
     <script>
-            $(document).ready(function () {
-                 $('#example').DataTable({
-                    dom: 'Bfrtip',
-                    buttons: [
-                       // 'copy',
-                         'excel',
-                         'pdf',
-                         'pageLength'
-                         ]
-                });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    // 'copy',
+                    'excel',
+                    'pdf',
+                    'pageLength'
+                ]
             });
+        });
 
 
 
 
 
     </script>
-    <link rel="stylesheet" type="text/css" href="assets/plugin/datatables/DataTablesLatest/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/plugin/datatables/DataTablesLatest/datatables.min.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/font.css">
 
 
@@ -199,12 +190,9 @@
 
 
     <style>
-            .dataTables_length{
-                padding-bottom: 10px !important;
-            }
-
-
-
+        .dataTables_length {
+            padding-bottom: 10px !important;
+        }
     </style>
 </body>
 
